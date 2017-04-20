@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Говорящий петух</string>
+    <string name="time_set">Установить время</string>
+    <string name="speaker_settings">Настройки петуха</string>
+    <string name="tts_setting">Настройки синтеза речи</string>
+</resources>

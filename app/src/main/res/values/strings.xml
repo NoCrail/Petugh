@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Говорящий петух</string>
+    <string name="app_name">Alarm Speaker</string>
+    <string name="time_set">Set alarm time</string>
+    <string name="speaker_settings">Speaker settings</string>
+    <string name="tts_setting">Device TTS Settings</string>
+    <string name="title_activity_about">About</string>
+
 </resources>
