@@ -7,20 +7,20 @@
 
 
     <Button
-        android:id="@+id/TTS_set"
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="13dp"
-        android:text="@string/tts_setting" />
+        android:text="@string/title_activity_about" />
 
     <Button
         android:id="@+id/Speak_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/TTS_set"
+        android:layout_above="@+id/about"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="18dp"
@@ -44,6 +44,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:adjustViewBounds="false"
-        android:clickable="true"
-        app:srcCompat="@drawable/Birds_Painting_Art_Other_497827" />
+        android:clickable="false"
+        app:srcCompat="@drawable/petukh" />
 </RelativeLayout>
