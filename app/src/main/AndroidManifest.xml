@@ -20,7 +20,8 @@
             android:name=".About"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AlarmSet"></activity>
+        <activity android:name=".AlarmSet" />
+        <activity android:name=".Alarm"></activity>
     </application>
 
 </manifest>
