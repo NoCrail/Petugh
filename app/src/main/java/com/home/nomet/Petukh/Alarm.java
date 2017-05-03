@@ -21,7 +21,7 @@ public class Alarm extends AppCompatActivity {
         TTS = new TextToSpeech(this, new OnInitListener() {         //фигня для говорилки
             @Override
             public void onInit(int status) {
-
+                if (status == TextToSpeech.SUCCESS) speak();
             }
         });
 

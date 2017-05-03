@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Petugh.iml" filepath="$PROJECT_DIR$/Petugh.iml" />
       <module fileurl="file://$PROJECT_DIR$/Petukh.iml" filepath="$PROJECT_DIR$/Petukh.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

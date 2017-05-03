@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent activity_about = new Intent(this, About.class);
-        final PendingIntent p_activity_about = PendingIntent.getActivity(this, 0, activity_about, 0);       //ингтент запуска окна о программе
+        final Intent activity_about = new Intent(this, About.class);
+        //final PendingIntent p_activity_about = PendingIntent.getActivity(this, 0, activity_about, 0);       //ингтент запуска окна о программе
 
-        Intent activity_set = new Intent(this, AlarmSet.class);
-        final PendingIntent p_activity_set = PendingIntent.getActivity(this, 0, activity_set, 0);       //интенты запуска окна set
+        final Intent activity_set = new Intent(this, AlarmSet.class);
+        //final PendingIntent p_activity_set = PendingIntent.getActivity(this, 0, activity_set, 0);       //интенты запуска окна set
 
 
         Button about = (Button)findViewById(R.id.about);
@@ -28,14 +28,26 @@ public class MainActivity extends AppCompatActivity {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(activity_about);
+            }
+        });
+       /* about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 try {
                     p_activity_about.send();
                 } catch (PendingIntent.CanceledException e) {               //клик кнопки about
                     e.printStackTrace();
                 }
             }
-        });
-        set.setOnClickListener(new View.OnClickListener() {
+        }); */
+       about.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(activity_set);
+           }
+       });
+        /*set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {                                   //клик кнопки set
                 try {
@@ -44,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
 
     }
 
