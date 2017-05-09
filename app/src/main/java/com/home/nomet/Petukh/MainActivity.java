@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Button about = (Button)findViewById(R.id.about);
         Button set = (Button)findViewById(R.id.timeset);            //кнопки назначаются
 
-        about.setOnClickListener(new View.OnClickListener() {
+        set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(activity_about);
+                startActivity(activity_set);
             }
         });
        /* about.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
        about.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(activity_set);
+               startActivity(activity_about);
            }
        });
         /*set.setOnClickListener(new View.OnClickListener() {

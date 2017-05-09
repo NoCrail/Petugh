@@ -26,22 +26,7 @@ public class Alarm extends AppCompatActivity {
         });
 
 
-        /*Thread speak = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                speak();                        //попытка запустить speak в потоке
-            }
-        });
-        speak.start();*/
 
-       /* Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {              //для дебага
-            @Override
-            public void onClick(View v) {
-                tts = "Оно работает";
-                speak();
-            }
-        });*/
 
 
 
