@@ -8,4 +8,5 @@ import com.google.gson.annotations.SerializedName;
 public class WeatherResponce {
     @SerializedName("weather")
     public Weather[] weather;
+
 }

@@ -5,4 +5,6 @@ package com.home.nomet.Petukh;
  */
 
 public class WeatherGet {
+
+    //Вспомнить бы зачем я его создавал?
 }
