@@ -6,7 +6,23 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.IOException;
+
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import retrofit2.Retrofit;
+
+import static android.R.string.ok;
+import static com.home.nomet.Petukh.WeatherServerConstants.API_KEY;
+import static com.home.nomet.Petukh.WeatherServerConstants.API_KEY_PARAM;
+import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_METRIC;
+import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_PARAM;
 
 public class About extends AppCompatActivity {
 
@@ -16,6 +32,22 @@ public class About extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_about);
             Toast.makeText(this, "kek", Toast.LENGTH_SHORT).show();
+            Button test = (Button)findViewById(R.id.WeatherTest);
+            test.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Retrofit.Builder builder = new Retrofit.Builder();
+                    OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+                    okHttpClientBuilder.addInterceptor(new Interceptor() {
+                        @Override
+                        public Response intercept(Chain chain) throws IOException {
+                            Request request = chain.request();
+                            HttpUrl url = request.url().newBuilder().addQueryParameter(UNITS_PARAM, UNITS_METRIC).addQueryParameter(API_KEY_PARAM, API_KEY).build();
+                            return chain.proceed(request);
+                        }
+                    });
+                }
+            });
         }
     }
 
