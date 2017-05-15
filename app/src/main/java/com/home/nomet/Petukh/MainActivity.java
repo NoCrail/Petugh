@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Intent activity_about = new Intent(this, About.class);
+
         //final PendingIntent p_activity_about = PendingIntent.getActivity(this, 0, activity_about, 0);       //ингтент запуска окна о программе
 
-        final Intent activity_set = new Intent(this, AlarmSet.class);
+
         //final PendingIntent p_activity_set = PendingIntent.getActivity(this, 0, activity_set, 0);       //интенты запуска окна set
 
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Intent activity_set = new Intent(MainActivity.this, AlarmSet.class);
                 startActivity(activity_set);
             }
         });
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
        about.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               final Intent activity_about = new Intent(MainActivity.this, About.class);
                startActivity(activity_about);
            }
        });

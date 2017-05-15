@@ -65,7 +65,8 @@ public class About extends AppCompatActivity {
                         @Override
                         public void run() {
                             try{
-                                WeatherResponce responce = weatherInfoCall.execute().body();
+                                retrofit2.Response responce = weatherInfoCall.execute();
+                                WeatherResponce weatherResponse = (WeatherResponce)responce.body();
                                 int a = 5;
                             } catch (Exception e){
                                 int a = 5;
