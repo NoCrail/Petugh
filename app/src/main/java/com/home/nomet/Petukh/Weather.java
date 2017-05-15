@@ -11,4 +11,6 @@ public class Weather {
 
     @SerializedName("description")
     public String description;
+
+
 }

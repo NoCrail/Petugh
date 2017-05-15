@@ -31,13 +31,14 @@ import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_METRIC;
 import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_PARAM;
 
 public class About extends AppCompatActivity {
+    public Weather weather;
 
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_about);
-            Toast.makeText(this, "kek", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "kek", Toast.LENGTH_SHORT).show();
             Button test = (Button)findViewById(R.id.WeatherTest);
 
             Retrofit.Builder builder = new Retrofit.Builder();
@@ -49,6 +50,7 @@ public class About extends AppCompatActivity {
                 public Response intercept(Chain chain) throws IOException {
                     Request request = chain.request();
                     HttpUrl url = request.url().newBuilder().addQueryParameter(UNITS_PARAM, UNITS_METRIC).addQueryParameter(API_KEY_PARAM, API_KEY).build();
+                    request = request.newBuilder().url(url).build();
                     return chain.proceed(request);
                 }
             });
@@ -61,12 +63,14 @@ public class About extends AppCompatActivity {
                 public void onClick(View v) {
                     WeatherApi weatherApi = retrofit.create(WeatherApi.class);
                     final Call<WeatherResponce>weatherInfoCall = weatherApi.getWeatherInfoByCityName("Voronezh", Locale.getDefault().getLanguage());
+
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
                             try{
                                 retrofit2.Response responce = weatherInfoCall.execute();
                                 WeatherResponce weatherResponse = (WeatherResponce)responce.body();
+                                weather.description = weatherResponse.weather[0].description;
                                 int a = 5;
                             } catch (Exception e){
                                 int a = 5;
@@ -75,9 +79,11 @@ public class About extends AppCompatActivity {
 
                     });
                     thread.start();
+
                     Toast.makeText(About.this,"" , Toast.LENGTH_SHORT).show();
                 }
             });
         }
+
     }
 

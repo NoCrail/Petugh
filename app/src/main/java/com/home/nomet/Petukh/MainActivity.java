@@ -32,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //final PendingIntent p_activity_about = PendingIntent.getActivity(this, 0, activity_about, 0);       //ингтент запуска окна о программе
 
-
-        //final PendingIntent p_activity_set = PendingIntent.getActivity(this, 0, activity_set, 0);       //интенты запуска окна set
 
 
         Button about = (Button)findViewById(R.id.about);
@@ -48,16 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(activity_set);
             }
         });
-       /* about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    p_activity_about.send();
-                } catch (PendingIntent.CanceledException e) {               //клик кнопки about
-                    e.printStackTrace();
-                }
-            }
-        }); */
+
        about.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -65,16 +53,7 @@ public class MainActivity extends AppCompatActivity {
                startActivity(activity_about);
            }
        });
-        /*set.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {                                   //клик кнопки set
-                try {
-                    p_activity_set.send();
-                } catch (PendingIntent.CanceledException e) {
-                    e.printStackTrace();
-                }
-            }
-        });*/
+
 
     }
 
