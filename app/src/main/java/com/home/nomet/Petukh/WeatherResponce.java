@@ -10,5 +10,5 @@ public class WeatherResponce {
     public Weather[] weather;
 
     @SerializedName("main")
-    public Weathermain[] Wmain;
+    public Weathermain main;
 }

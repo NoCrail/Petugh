@@ -36,7 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button about = (Button)findViewById(R.id.about);
+        Button spset = (Button)findViewById(R.id.Speak_set);
         Button set = (Button)findViewById(R.id.timeset);            //кнопки назначаются
+
+        spset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent activity_spset = new Intent(MainActivity.this, Spset.class);
+                startActivity(activity_spset);
+            }
+        });
 
         set.setOnClickListener(new View.OnClickListener() {
             @Override

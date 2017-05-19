@@ -6,5 +6,5 @@ package com.home.nomet.Petukh;
 import com.google.gson.annotations.SerializedName;
 public class Weathermain {
     @SerializedName("temp")
-    public double temp;
+    public String temp;
 }

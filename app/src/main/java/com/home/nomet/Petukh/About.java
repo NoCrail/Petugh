@@ -29,7 +29,7 @@ import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_PARAM;
 public class About extends AppCompatActivity {
     public Weather weather;
     public Weathermain weathermain;
-
+    public String a;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +67,10 @@ public class About extends AppCompatActivity {
                             try{
                                 retrofit2.Response responce = weatherInfoCall.execute();
                                 WeatherResponce weatherResponse = (WeatherResponce)responce.body();
-                                weather.description = weatherResponse.weather[0].description;
-                                weathermain.temp = weatherResponse.Wmain[0].temp;
+                                a = weatherResponse.weather[0].description;
+                                //weather.description = weatherResponse.weather[0].description;
+                                //weathermain.temp = weatherResponse.main.temp;
+
                                 int a = 5;
                             } catch (Exception e){
                                 int a = 5;
@@ -78,7 +80,7 @@ public class About extends AppCompatActivity {
                     });
                     thread.start();
 
-                    Toast.makeText(About.this,"" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(About.this,a, Toast.LENGTH_SHORT).show();
                 }
             });
         }
