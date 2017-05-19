@@ -9,4 +9,6 @@ public class WeatherResponce {
     @SerializedName("weather")
     public Weather[] weather;
 
+    @SerializedName("main")
+    public Weathermain[] Wmain;
 }

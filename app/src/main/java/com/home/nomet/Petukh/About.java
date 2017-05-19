@@ -1,10 +1,7 @@
 package com.home.nomet.Petukh;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -24,7 +21,6 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static android.R.string.ok;
 import static com.home.nomet.Petukh.WeatherServerConstants.API_KEY;
 import static com.home.nomet.Petukh.WeatherServerConstants.API_KEY_PARAM;
 import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_METRIC;
@@ -32,6 +28,7 @@ import static com.home.nomet.Petukh.WeatherServerConstants.UNITS_PARAM;
 
 public class About extends AppCompatActivity {
     public Weather weather;
+    public Weathermain weathermain;
 
 
         @Override
@@ -71,6 +68,7 @@ public class About extends AppCompatActivity {
                                 retrofit2.Response responce = weatherInfoCall.execute();
                                 WeatherResponce weatherResponse = (WeatherResponce)responce.body();
                                 weather.description = weatherResponse.weather[0].description;
+                                weathermain.temp = weatherResponse.Wmain[0].temp;
                                 int a = 5;
                             } catch (Exception e){
                                 int a = 5;
