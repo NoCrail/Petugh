@@ -67,13 +67,15 @@ public class About extends AppCompatActivity {
                             try{
                                 retrofit2.Response responce = weatherInfoCall.execute();
                                 WeatherResponce weatherResponse = (WeatherResponce)responce.body();
-                                a = weatherResponse.weather[0].description;
-                                //weather.description = weatherResponse.weather[0].description;
-                                //weathermain.temp = weatherResponse.main.temp;
+                                //a = weatherResponse.weather[0].description;
+                                weather = new Weather();
+                                weathermain = new Weathermain();
+                                weather.description = weatherResponse.weather[0].description;
+                                weathermain.temp = weatherResponse.main.temp;
 
-                                int a = 5;
+
                             } catch (Exception e){
-                                int a = 5;
+
                             }
                         }
 

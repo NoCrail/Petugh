@@ -6,4 +6,12 @@
     <string name="tts_setting">Настройки синтеза речи</string>
     <string name="title_activity_about">О программе</string>
     <string name="Set">Установить</string>
+    <string name="title_activity_spset">Настройки петуха</string>
+    <string name="good_morning">\"Доброе утро\"</string>
+    <string name="off">ВЫКЛ</string>
+    <string name="on">ВКЛ</string>
+    <string name="save">Сохранить</string>
+    <string name="weather">\"На улице...\"</string>
+    <string name="asked_to_remind">\"Вы просили напомнить о...\"</string>
+    <string name="TODO_Edit">Редактировать список дел</string>
 </resources>

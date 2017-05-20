@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.home.nomet.Petukh.Spset">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent" >
 
-</android.support.design.widget.CoordinatorLayout>
+
+    <TextView
+        android:id="@+id/GoodMorningText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/good_morning"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_toStartOf="@+id/checkGoodMorning" />
+
+    <CheckBox
+        android:id="@+id/checkGoodMorning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/WeatherText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/GoodMorningText"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/GoodMorningText"
+        android:text="@string/weather"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/checkWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/WeatherText"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/WeatherText" />
+
+    <TextView
+        android:id="@+id/AskedToRemindText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/WeatherText"
+        android:layout_toStartOf="@+id/checkWeather"
+        android:text="@string/asked_to_remind"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignEnd="@+id/save" />
+
+    <CheckBox
+        android:id="@+id/checkRemind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/AskedToRemindText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp"
+        android:text="@string/TODO_Edit" />
+
+</RelativeLayout>
