@@ -14,5 +14,6 @@
     <string name="weather">\"The weather is...\"</string>
     <string name="asked_to_remind">\"You asked to remind about...\"</string>
     <string name="TODO_Edit">Edit TODO List</string>
+    <string name="title_activity_todo">TODO</string>
 
 </resources>

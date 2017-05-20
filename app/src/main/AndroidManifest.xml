@@ -27,6 +27,10 @@
         <activity
             android:name=".Spset"
             android:label="@string/title_activity_spset"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TODO"
+            android:label="@string/title_activity_todo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
