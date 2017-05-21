@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TODO extends AppCompatActivity {
     public static final String TODOPR = "List TODO";
@@ -22,7 +23,11 @@ public class TODO extends AppCompatActivity {
         setContentView(R.layout.activity_todo);
         ToDo = getSharedPreferences(TODOPR, Context.MODE_PRIVATE);
         final EditText TextTODO = (EditText)findViewById(R.id.TODO);
-        Button save = (Button)findViewById(R.id.save);
+        if(ToDo.contains(TODOListPR))   {
+                TODOList = ToDo.getString(TODOListPR, "");
+                TextTODO.setText(TODOList);
+            }
+        Button save = (Button)findViewById(R.id.Save);
 
 
 
@@ -33,6 +38,7 @@ public class TODO extends AppCompatActivity {
                 SharedPreferences.Editor editor = ToDo.edit();
                 editor.putString(TODOListPR, TODOList);
                 editor.apply();
+                Toast.makeText(TODO.this, "Сохранено", Toast.LENGTH_SHORT).show();
             }
         });
 
