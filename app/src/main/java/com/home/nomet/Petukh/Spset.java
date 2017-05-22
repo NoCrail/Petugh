@@ -20,7 +20,7 @@ public class Spset extends AppCompatActivity {
     public static final String CheckWBS = "b";
     public static final String CheckTDBS = "c";
 
-    private SharedPreferences CheckGMSP;
+    static SharedPreferences CheckGMSP;
 
 
     private int CheckGMA;

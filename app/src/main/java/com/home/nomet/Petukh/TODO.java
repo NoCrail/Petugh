@@ -13,10 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class TODO extends AppCompatActivity {
     public static final String TODOPR = "List TODO";
     public static final String TODOListPR= "Todo List";
-    private SharedPreferences ToDo;
+    static SharedPreferences ToDo;
     private String TODOList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
