@@ -81,8 +81,8 @@ public class Alarm extends AppCompatActivity {
                     weathermain = new Weathermain();
                     weather.description = weatherResponse.weather[0].description;
                     weathermain.temp = weatherResponse.main.temp;
-                    Weather = "Сейчас на улице" + weathermain.temp + "градусов," + weather.description;
-                    Toast.makeText(Alarm.this, Weather, Toast.LENGTH_SHORT).show();
+                    Weather = "Сейчас на улице " + weathermain.temp + " градусов, " + weather.description;
+                    //Toast.makeText(Alarm.this, Weather, Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e){
 
