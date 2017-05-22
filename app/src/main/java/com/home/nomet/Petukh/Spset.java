@@ -15,16 +15,13 @@ import android.widget.Toast;
 
 public class Spset extends AppCompatActivity {
     public static final String CheckGMB = "a";
-    //public static final String CheckWB = "a";
-    //public static final String CheckTDB = "a";
 
     public static final String CheckGMBS = "a";
-    public static final String CheckWBS = "a";
-    public static final String CheckTDBS = "a";
+    public static final String CheckWBS = "b";
+    public static final String CheckTDBS = "c";
 
     private SharedPreferences CheckGMSP;
-    //private SharedPreferences CheckWSP;
-    //private SharedPreferences CheckTDSP;
+
 
     private int CheckGMA;
     private int CheckWA;
@@ -43,28 +40,26 @@ public class Spset extends AppCompatActivity {
 
 
         CheckGMSP = getSharedPreferences(CheckGMB, Context.MODE_PRIVATE);
-        //CheckTDSP = getSharedPreferences(CheckTDB, Context.MODE_PRIVATE);
-        //CheckWSP = getSharedPreferences(CheckWB, Context.MODE_PRIVATE);
 
 
         if(CheckGMSP.contains(CheckGMBS)){
             CheckGMA = CheckGMSP.getInt(CheckGMBS, 0);
             if (CheckGMA == 1)CheckGM.setChecked(true);
         }
-        /*if(CheckGMSP.contains(CheckTDBS)){
+        if(CheckGMSP.contains(CheckTDBS)){
             CheckTDA = CheckGMSP.getInt(CheckTDBS, 0);
             if (CheckTDA == 1)CheckTD.setChecked(true);
         }
         if(CheckGMSP.contains(CheckWBS)){
             CheckWA = CheckGMSP.getInt(CheckWBS, 0);
             if (CheckWA == 1)CheckW.setChecked(true);
-        }*/
+        }
 
 
 
 
 
-        Toast.makeText(this, String.valueOf(CheckGMA), Toast.LENGTH_SHORT).show();
+
 
         todoEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,22 +75,14 @@ public class Spset extends AppCompatActivity {
                 if(CheckGM.isChecked()){CheckGMA = 1;} else {CheckGMA = 0;};
                 if(CheckTD.isChecked()){CheckTDA = 1;} else {CheckTDA = 0;};
                 if(CheckW.isChecked()){CheckWA = 1;} else {CheckWA = 0;};
-                Toast.makeText(Spset.this, String.valueOf(CheckTDA), Toast.LENGTH_SHORT).show();
                 SharedPreferences.Editor editorGM = CheckGMSP.edit();
                 editorGM.putInt(CheckGMBS, CheckGMA);
                 editorGM.putInt(CheckTDBS, CheckTDA);
-                //editorGM.putInt(CheckWBS, CheckWA);
+                editorGM.putInt(CheckWBS, CheckWA);
                 editorGM.apply();
-                if(CheckGMSP.contains(CheckTDBS)){
-                    CheckTDA = CheckGMSP.getInt(CheckTDBS, 0);}
-                Toast.makeText(Spset.this, String.valueOf(CheckTDA), Toast.LENGTH_SHORT).show();
-                /*SharedPreferences.Editor editorTD = CheckTDSP.edit();
-                editorTD.putInt(CheckTDBS, CheckTDA);
-                editorTD.apply();
 
-                SharedPreferences.Editor editorW = CheckWSP.edit();
-                editorW.putInt(CheckWBS, CheckWA);
-                editorW.apply();*/
+                Toast.makeText(Spset.this, "ok", Toast.LENGTH_SHORT).show();
+
 
             }
         });
