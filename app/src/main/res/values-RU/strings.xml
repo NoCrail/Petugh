@@ -14,4 +14,5 @@
     <string name="weather">\"На улице...\"</string>
     <string name="asked_to_remind">\"Вы просили напомнить о...\"</string>
     <string name="TODO_Edit">Редактировать список дел</string>
+    <string name="title_activity_todo">Дела</string>
 </resources>
