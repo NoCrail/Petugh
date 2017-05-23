@@ -1,11 +1,16 @@
 package com.home.nomet.Petukh;
 
+import android.Manifest;
 import android.content.Context;
+import android.os.PowerManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -40,7 +45,7 @@ public class Alarm extends AppCompatActivity {
     public Weathermain weathermain;
     public String a;
     TextToSpeech TTS;
-    public static String GM;
+    public static String GM = "Доброе утро!";
     public static String Weather;
     public static String ToDo;
 
@@ -55,6 +60,7 @@ public class Alarm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
+
 
         Retrofit.Builder builder = new Retrofit.Builder();
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
@@ -94,8 +100,24 @@ public class Alarm extends AppCompatActivity {
         });
         thread.start();
 
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
 
-        GM = "Доброе утро!";
+        }
+
+        ContextCompat.checkSelfPermission(this, Manifest.permission.WAKE_LOCK);    //все робит на 6 андроиде
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock mWakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "My Tag");
+
+        mWakeLock.acquire();
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+        window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+        window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+
+
+
 
         TODO.ToDo = getSharedPreferences(TODOPR, Context.MODE_PRIVATE);
         if(TODO.ToDo.contains(TODOListPR))   {
@@ -125,7 +147,13 @@ public class Alarm extends AppCompatActivity {
             }
         });
 
-
+        Button stop = (Button)findViewById(R.id.stop);
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Alarm.this.finish();
+            }
+        });
 
 
 
