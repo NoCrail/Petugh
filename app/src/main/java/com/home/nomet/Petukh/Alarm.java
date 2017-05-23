@@ -43,9 +43,11 @@ public class Alarm extends AppCompatActivity {
     public static String GM;
     public static String Weather;
     public static String ToDo;
+
     public static int GMB;
     public static int WB;
     public static int TDB;
+
     public static String tts = "Речь Речь Речь";
 
 
@@ -81,7 +83,7 @@ public class Alarm extends AppCompatActivity {
                     weathermain = new Weathermain();
                     weather.description = weatherResponse.weather[0].description;
                     weathermain.temp = weatherResponse.main.temp;
-                    Weather = "Сейчас на улице " + weathermain.temp + " градусов, " + weather.description;
+                    Weather = " Сейчас на улице " + weathermain.temp + " градусов, " + weather.description;
                     //Toast.makeText(Alarm.this, Weather, Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e){
@@ -99,7 +101,7 @@ public class Alarm extends AppCompatActivity {
         if(TODO.ToDo.contains(TODOListPR))   {
             ToDo = TODO.ToDo.getString(TODOListPR, "");}
 
-
+        ToDo = "Ваши дела на сегодня : " + ToDo;
         Spset.CheckGMSP = getSharedPreferences(CheckGMB, Context.MODE_PRIVATE);
         if(Spset.CheckGMSP.contains(CheckGMBS)){
              GMB = Spset.CheckGMSP.getInt(CheckGMBS, 0);
@@ -114,6 +116,7 @@ public class Alarm extends AppCompatActivity {
             if (WB==0)Weather="";
         }
 
+        tts = GM + Weather + ToDo;
 
         TTS = new TextToSpeech(this, new OnInitListener() {         //фигня для говорилки
             @Override
