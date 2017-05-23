@@ -83,7 +83,7 @@ public class Alarm extends AppCompatActivity {
                     weathermain = new Weathermain();
                     weather.description = weatherResponse.weather[0].description;
                     weathermain.temp = weatherResponse.main.temp;
-                    Weather = " Сейчас на улице " + weathermain.temp + " градусов, " + weather.description;
+                    Weather = " Сейчас на улице " + weathermain.temp + " градусов, " + weather.description+".";
                     //Toast.makeText(Alarm.this, Weather, Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e){
@@ -101,7 +101,7 @@ public class Alarm extends AppCompatActivity {
         if(TODO.ToDo.contains(TODOListPR))   {
             ToDo = TODO.ToDo.getString(TODOListPR, "");}
 
-        ToDo = "Ваши дела на сегодня : " + ToDo;
+        ToDo = " Ваши дела на сегодня : " + ToDo;
         Spset.CheckGMSP = getSharedPreferences(CheckGMB, Context.MODE_PRIVATE);
         if(Spset.CheckGMSP.contains(CheckGMBS)){
              GMB = Spset.CheckGMSP.getInt(CheckGMBS, 0);
