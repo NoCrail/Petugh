@@ -15,5 +15,8 @@
     <string name="asked_to_remind">\"Дела на сегодня\"</string>
     <string name="TODO_Edit">Редактировать список дел</string>
     <string name="title_activity_todo">Дела</string>
+
+
     <string name="stop">Стоп</string>
+    <string name="git">Проект на GitHub</string>
 </resources>

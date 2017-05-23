@@ -16,6 +16,7 @@
     <string name="TODO_Edit">Edit TODO List</string>
     <string name="title_activity_todo">TODO</string>
     <string name="stop">Stop</string>
+    <string name="git">Project on GitHub</string>
 
 
 </resources>
